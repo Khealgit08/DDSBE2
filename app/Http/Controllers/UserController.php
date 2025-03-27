@@ -47,16 +47,14 @@ class UserController extends Controller
     * Obtains and show one user
     * @return Illuminate\Http\Response
     */
-    public function show($id){
-        $user = User::findOrFail($id);
-        // old code
-        $user = User::where('userid', $id)->first();
-        if($user){
-            return $this->successResponse($user);
+    public function getUserById($id) {
+        $user = User::find($id);
+    
+        if (!$user) {
+            return response()->json(['message' => 'User not found'], 404);
         }
-        {
-            return $this->errorResponse('User ID Does Not Exists', Response::HTTP_NOT_FOUND);
-        }
+    
+        return response()->json($user, 200);
     }
 
     /**
