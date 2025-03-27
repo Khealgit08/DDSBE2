@@ -2,13 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Traits\ApiResponser;
 use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;
-use App\Models\User;
+use DB;
 
-class UserController extends Controller
-{
+
+class UserController extends Controller {
+
+    use ApiResponser;
+
     private $request;
 
     public function __construct(Request $request)
@@ -92,7 +97,7 @@ class UserController extends Controller
             $user->save();
             return $this->successResponse($user);
         }
-        {
+        else{
             return $this->errorResponse('User ID Does Not Exists', Response::HTTP_NOT_FOUND);
         }
     }
