@@ -50,16 +50,14 @@ class UserController extends Controller
     public function show($id){
         $user = User::findOrFail($id);
         return $this->successResponse($user);
-        return $this->errorResponse('User ID Does Not Exists', Response::HTTP_NOT_FOUND);
         // old code
-        /*$user = User::where('userid', $id)->first();
+        $user = User::where('userid', $id)->first();
         if($user){
             return $this->successResponse($user);
         }
-        {
+        else{
             return $this->errorResponse('User ID Does Not Exists', Response::HTTP_NOT_FOUND);
         }
-        */
     }
 
     /**
