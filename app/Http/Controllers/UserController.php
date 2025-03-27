@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Response;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Http\JsonResponse;
 use App\Models\User;
 
 class UserController extends Controller
@@ -48,7 +49,6 @@ class UserController extends Controller
     */
     public function show($id){
         $user = User::findOrFail($id);
-        return $this->successResponse($user);
         // old code
         $user = User::where('userid', $id)->first();
         if($user){
