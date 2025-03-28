@@ -10,7 +10,7 @@ use Illuminate\Http\JsonResponse;
 use DB;
 
 
-class User1Controller extends Controller {
+class User2Controller extends Controller {
 
     /*use ApiResponser;
 

@@ -17,12 +17,12 @@ $router->get('/', function () use ($router) {
 });
 // unsecure routes
 $router->group(['prefix' => 'api'], function () use ($router) {
-    $router->get('/users',['uses' => 'User1Controller@getUsers']);
-    $router->get('/users',['uses' => 'User1Controller@getUsers']);
-    $router->get('/users', 'User1Controller@index'); // get all usersrecords
-    $router->post('/users', 'User1Controller@add'); // create new userrecord
-    $router->get('/users/{id}', 'User1Controller@show'); // get user by id
-    $router->put('/users/{id}', 'User1Controller@update'); // update userrecord
-    $router->patch('/users/{id}', 'User1Controller@update'); // update userrecord
-    $router->delete('/users/{id}', 'User1Controller@delete'); // deleterecord
+    $router->get('/users',['uses' => 'User2Controller@getUsers']);
+    $router->get('/users',['uses' => 'User2Controller@getUsers']);
+    $router->get('/users', 'User2Controller@index'); // get all usersrecords
+    $router->post('/users', 'User2Controller@add'); // create new userrecord
+    $router->get('/users/{id}', 'User2Controller@show'); // get user by id
+    $router->put('/users/{id}', 'User2Controller@update'); // update userrecord
+    $router->patch('/users/{id}', 'User2Controller@update'); // update userrecord
+    $router->delete('/users/{id}', 'User2Controller@delete'); // deleterecord
 });
